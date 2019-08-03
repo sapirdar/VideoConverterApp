@@ -20,7 +20,7 @@ export class VideoComponent implements OnInit {
   modalRef: BsModalRef;
 
   constructor(
-    protected domSanitizer: DomSanitizer,
+    public domSanitizer: DomSanitizer,
     private videoService: VideoService,
     private modalService: BsModalService
   ) {
