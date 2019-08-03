@@ -1,6 +1,6 @@
 # Video Converter App
 
-http://videoconverterapp.azurewebsites.net/videos
+http://videoconverterapp.azurewebsites.net
 
 Assumptions & Explanations:
 
