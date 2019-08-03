@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-md-3">
+    <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;"
+      accept="video/*,.mkv">
+    <button type="button" class="btn btn-info" (click)="file.click()" [disabled]="isLoading">
+      <i class="fas fa-upload"></i>
+      Upload Video
+      <span *ngIf="progress>0">{{progress}}%</span></button>
+  </div>
+</div>

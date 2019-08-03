@@ -1,0 +1,30 @@
+<div class="card p-o" *ngIf="!isLoading">
+    <div class="card-body p-0">
+        <span class="name">{{video.name}}</span>
+
+        <ngb-carousel #carousel *ngIf="video.thumbnails?.length > 0" interval="9000">
+            <ng-template ngbSlide *ngFor="let thumbnail of video.thumbnails">
+                <img *ngIf="thumbnail?.path" [src]="domSanitizer.bypassSecurityTrustUrl(apiUrl + thumbnail?.path)">
+            </ng-template>
+        </ngb-carousel>
+
+        <!-- <h5 class="p-2">{{video.id}}</h5> -->
+        <button class="col-auto btn btn-secondary m-2" (click)="delete()"> <i class="fas fa-trash"></i></button>
+        <button class="col-auto btn btn-info m-2" (click)="openModal(template)"> <i
+                class="fas fa-play-circle"></i></button>
+
+
+    </div>
+
+</div>
+
+<ng-template #template>
+    <button type="button" class="close pull-right text-right pr-2" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <span class="name">{{video.name}}</span>
+    <div class="modal-body">
+        <video #media id="singleVideo" preload="auto" controls>
+            <source [src]="domSanitizer.bypassSecurityTrustUrl(apiUrl + video?.hdFilePath)" type="video/mp4">
+        </video> </div>
+</ng-template>

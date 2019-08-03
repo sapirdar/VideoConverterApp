@@ -1,0 +1,2 @@
+<alert *ngIf="(alert$ | async)" [type]="(alert$ | async).type" [dismissible]="true"> {{(alert$ | async).content}}
+</alert>

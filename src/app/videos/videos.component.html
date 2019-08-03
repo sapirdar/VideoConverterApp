@@ -1,0 +1,8 @@
+<div class="row p-3">
+    <app-upload class="col"></app-upload>
+</div>
+
+<div class="row p-4 justify-content-center">
+    <app-video class="col-auto p-2" *ngFor="let video of (list$ | async)" [video]="video"></app-video>
+    <h5 *ngIf="!(list$ | async) && !isLoading">No Videos</h5>
+</div>
