@@ -3,7 +3,7 @@ import { environment } from '../../environments/environment';
 import { ConfigService } from './config.service';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { VideoService } from './video.service';
-import { Video } from './../models/Video';
+import { Video } from './../models/video';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
